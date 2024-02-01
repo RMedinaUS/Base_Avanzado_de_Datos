@@ -1,0 +1,13 @@
+import pandas as pd
+
+# Cargar klos datos desde el archivo json
+with open('diccionario_maya.json', 'r', encoding='utf-8') as file:
+  diccionario_data = json.load(file)
+
+# Crear un dataframe
+df = pd.DataFrame(diccionario_data)
+
+# Crear el excel a partir del DataFrame
+df.to_excel('diccionario_maya.xlsx', index=False)
+
+print("Datos guardados en el diccionario_maya.xlsx")
